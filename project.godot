@@ -1,0 +1,52 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Realm Explorer"
+run/main_scene="res://scenes/main.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Feral Games"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://_icons/icon.png"
+
+[autoload]
+
+SteamManager="*res://_singletons/manager_steam.gd"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/inferred_declaration=1
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+
+[file_customization]
+
+folder_colors={
+"res://_icons/": "gray",
+"res://_singletons/": "gray",
+"res://assets/": "yellow",
+"res://scenes/": "pink",
+"res://scripts/": "blue"
+}
+
+[filesystem]
+
+import/blender/enabled=false
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
