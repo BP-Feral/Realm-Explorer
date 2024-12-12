@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://detf073hx13yt"]
+
+[ext_resource type="Script" path="res://scripts/menuScripts/host_game.gd" id="1_e88rk"]
+[ext_resource type="Theme" uid="uid://c2a5yrqrctdsc" path="res://ui/base_theme.tres" id="2_2h74c"]
+
+[node name="HostGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e88rk")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LobbyContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(1300, 700)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/LobbyContainer"]
+layout_mode = 2
+
+[node name="LobbyName" type="Label" parent="CenterContainer/LobbyContainer/VBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme = ExtResource("2_2h74c")
+text = "<Placeholder Lobby>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CenterContainer/LobbyContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/LobbyContainer/VBox/Panel"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/LobbyContainer/VBox/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Panel" type="Panel" parent="CenterContainer/LobbyContainer/VBox/Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_2h74c")
+
+[node name="ForceStart" type="Button" parent="CenterContainer/LobbyContainer/VBox/Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_2h74c")
+text = "Force Start"
+
+[node name="Panel2" type="Panel" parent="CenterContainer/LobbyContainer/VBox/Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_2h74c")

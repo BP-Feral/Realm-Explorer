@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c2a5yrqrctdsc"]
+
+[ext_resource type="FontFile" uid="uid://pk2ycsnxiydh" path="res://assets/fonts/pcsenior.ttf" id="1_gbtjt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjn05"]
+bg_color = Color(0.237609, 0.408112, 0.226998, 0.929412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0sqo"]
+bg_color = Color(0.0235294, 0.12549, 0.12549, 0.886275)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eniui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1mme"]
+bg_color = Color(1, 1, 1, 0.0588235)
+
+[resource]
+Button/fonts/font = ExtResource("1_gbtjt")
+Button/styles/hover = SubResource("StyleBoxFlat_cjn05")
+Button/styles/normal = SubResource("StyleBoxFlat_t0sqo")
+ColorPickerButton/fonts/font = ExtResource("1_gbtjt")
+Label/fonts/font = ExtResource("1_gbtjt")
+LineEdit/fonts/font = ExtResource("1_gbtjt")
+Panel/styles/panel = SubResource("StyleBoxEmpty_eniui")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_l1mme")
+ProgressBar/fonts/font = ExtResource("1_gbtjt")
+TabBar/fonts/font = ExtResource("1_gbtjt")
+TabContainer/fonts/font = ExtResource("1_gbtjt")
+TextEdit/fonts/font = ExtResource("1_gbtjt")
+Tree/fonts/font = ExtResource("1_gbtjt")
+Tree/fonts/title_button_font = ExtResource("1_gbtjt")

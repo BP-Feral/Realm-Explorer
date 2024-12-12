@@ -1,0 +1,188 @@
+[gd_scene load_steps=5 format=3 uid="uid://77p51xle7dil"]
+
+[ext_resource type="Theme" uid="uid://c2a5yrqrctdsc" path="res://ui/base_theme.tres" id="1_leo0p"]
+[ext_resource type="Script" path="res://_steamworks tests/SteamController.gd" id="1_wqa3q"]
+[ext_resource type="PackedScene" uid="uid://0sdhydqmamob" path="res://scenes/components/friend_card.tscn" id="3_kg2ar"]
+[ext_resource type="PackedScene" uid="uid://3b4knw37s74x" path="res://scenes/components/leader_board_user_score.tscn" id="3_y564a"]
+
+[node name="TestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme = ExtResource("1_leo0p")
+script = ExtResource("1_wqa3q")
+LeaderBoardUserScore = ExtResource("3_y564a")
+FriendCard = ExtResource("3_kg2ar")
+
+[node name="AchieveAchievement" type="Button" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 107.0
+offset_right = 293.0
+offset_bottom = 159.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Unlcok ACH"
+
+[node name="RemoveAchievement" type="Button" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 178.0
+offset_right = 293.0
+offset_bottom = 230.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Lock ACH"
+
+[node name="StoreCloudFile" type="Button" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 299.0
+offset_right = 292.0
+offset_bottom = 351.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Store File"
+
+[node name="GetCloudFile" type="Button" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 366.0
+offset_right = 293.0
+offset_bottom = 418.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Get File"
+
+[node name="RemoveCloudFile" type="Button" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 434.0
+offset_right = 293.0
+offset_bottom = 486.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Remove File"
+
+[node name="SetRichPresence" type="Button" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 554.0
+offset_right = 364.0
+offset_bottom = 606.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Set RP main menu"
+
+[node name="SetLevel1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 625.0
+offset_right = 364.0
+offset_bottom = 677.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Set RP level 1"
+
+[node name="QuitGame" type="Button" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 738.0
+offset_right = 293.0
+offset_bottom = 790.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Quit Game"
+
+[node name="GetLeaderboard" type="Button" parent="."]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 112.0
+offset_right = 842.0
+offset_bottom = 164.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Get Leaderboard"
+
+[node name="SubmitLeaderboardScore" type="Button" parent="."]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 181.0
+offset_right = 842.0
+offset_bottom = 233.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Submit Score"
+
+[node name="GetLeaderboardScore" type="Button" parent="."]
+layout_mode = 0
+offset_left = 866.0
+offset_top = 112.0
+offset_right = 1146.0
+offset_bottom = 164.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 16
+text = "Get Scores"
+
+[node name="SubmitLeaderboardScoreValue" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 866.0
+offset_top = 178.0
+offset_right = 1146.0
+offset_bottom = 230.0
+
+[node name="Leaderboards" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 295.0
+offset_right = 1211.0
+offset_bottom = 606.0
+
+[node name="EntriesList" type="VBoxContainer" parent="Leaderboards"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FriendsPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -306.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FriendsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FriendsPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FriendCard" parent="FriendsPanel/ScrollContainer/VBoxContainer" instance=ExtResource("3_kg2ar")]
+layout_mode = 2
+
+[connection signal="button_down" from="AchieveAchievement" to="." method="_on_achieve__achievement_button_down"]
+[connection signal="button_down" from="RemoveAchievement" to="." method="_on_remove_achievement_button_down"]
+[connection signal="button_down" from="StoreCloudFile" to="." method="_on_store_cloud_file_button_down"]
+[connection signal="button_down" from="GetCloudFile" to="." method="_on_get_cloud_file_button_down"]
+[connection signal="button_down" from="RemoveCloudFile" to="." method="_on_remove_cloud_file_button_down"]
+[connection signal="button_down" from="SetRichPresence" to="." method="_on_set_rich_presence_button_down"]
+[connection signal="button_down" from="SetLevel1" to="." method="_on_set_level_1_button_down"]
+[connection signal="button_down" from="QuitGame" to="." method="_on_set_level_2_button_down"]
+[connection signal="button_down" from="GetLeaderboard" to="." method="_on_get_leaderboard_button_down"]
+[connection signal="button_down" from="SubmitLeaderboardScore" to="." method="_on_submit_leaderboard_score_button_down"]
+[connection signal="button_down" from="GetLeaderboardScore" to="." method="_on_get_leaderboard_score_button_down"]

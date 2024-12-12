@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://_splash screen/splash_screen.gd" id="1_op7rn"]
 [ext_resource type="Texture2D" uid="uid://diwvhh0wm4mwy" path="res://_splash screen/splash_screen.png" id="1_v4y8u"]
-[ext_resource type="PackedScene" uid="uid://bajuyj47rtn7y" path="res://scenes/mainMenu.tscn" id="2_i15r6"]
+[ext_resource type="PackedScene" uid="uid://bajuyj47rtn7y" path="res://scenes/menuScenes/mainMenu.tscn" id="2_5c72f"]
 [ext_resource type="AudioStream" uid="uid://k2lwmmyb3qtj" path="res://assets/sounds/deep strange.mp3" id="3_5oqsw"]
 [ext_resource type="FontFile" uid="uid://pk2ycsnxiydh" path="res://assets/fonts/pcsenior.ttf" id="4_p1k42"]
 
@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_op7rn")
-menu_scene = ExtResource("2_i15r6")
+menu_scene = ExtResource("2_5c72f")
 splash_screen = NodePath("CenterContainer/TextureRect")
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -25,7 +25,6 @@ func _ready() -> void:
 	# Display Splash
 	fade()
 
-
 func fade() -> void:
 	splash_screen.modulate.a = 0.0
 	var tween : Tween = self.create_tween()

@@ -35,12 +35,15 @@ window/size/mode=3
 [file_customization]
 
 folder_colors={
+"res://_data/": "gray",
 "res://_icons/": "gray",
 "res://_singletons/": "gray",
 "res://_splash screen/": "gray",
+"res://_steamworks tests/": "gray",
 "res://assets/": "yellow",
 "res://scenes/": "pink",
-"res://scripts/": "blue"
+"res://scripts/": "blue",
+"res://ui/": "teal"
 }
 
 [filesystem]

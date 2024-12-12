@@ -1,0 +1,194 @@
+[gd_scene load_steps=10 format=3 uid="uid://bajuyj47rtn7y"]
+
+[ext_resource type="Script" path="res://scripts/menuScripts/main_menu.gd" id="1_gf82o"]
+[ext_resource type="PackedScene" uid="uid://detf073hx13yt" path="res://scenes/menuScenes/HostGame.tscn" id="2_ph2fm"]
+[ext_resource type="PackedScene" uid="uid://d3f440ngv15ii" path="res://scenes/menuScenes/JoinGame.tscn" id="3_7e4ie"]
+[ext_resource type="PackedScene" uid="uid://ciosioauuftqh" path="res://scenes/menuScenes/OptionsScene.tscn" id="4_y500d"]
+[ext_resource type="PackedScene" uid="uid://bsklfukka72fd" path="res://scenes/menuScenes/CollectionScene.tscn" id="5_x38kv"]
+[ext_resource type="Theme" uid="uid://c2a5yrqrctdsc" path="res://ui/base_theme.tres" id="6_fhvjj"]
+[ext_resource type="PackedScene" uid="uid://77p51xle7dil" path="res://_steamworks tests/TestScene.tscn" id="6_ukks3"]
+[ext_resource type="FontFile" uid="uid://pk2ycsnxiydh" path="res://assets/fonts/pcsenior.ttf" id="7_73v6y"]
+[ext_resource type="AudioStream" uid="uid://caa6bstygilex" path="res://assets/sounds/signal noise.mp3" id="8_pn1eu"]
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("playerImage", "playerName", "main_view", "HostGameButton", "JoinGameButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gf82o")
+HostGameScene = ExtResource("2_ph2fm")
+JoinGameScene = ExtResource("3_7e4ie")
+OptionsScene = ExtResource("4_y500d")
+CollectionScene = ExtResource("5_x38kv")
+SteamWorksTestScene = ExtResource("6_ukks3")
+playerImage = NodePath("VBoxContainer/TopBar/TopBarHBox/CenterContainer/HBoxContainer/PlayerAvatar")
+playerName = NodePath("VBoxContainer/TopBar/TopBarHBox/CenterContainer/HBoxContainer/PlayerName")
+main_view = NodePath("VBoxContainer/HBoxContainer/MainView")
+HostGameButton = NodePath("VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer/ButtonHostGame")
+JoinGameButton = NodePath("VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer/ButtonJoinGame")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("..")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme = ExtResource("6_fhvjj")
+
+[node name="TopBarHBox" type="HBoxContainer" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TopBar/TopBarHBox"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TopBar/TopBarHBox"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TopBar/TopBarHBox/CenterContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="PlayerAvatar" type="TextureRect" parent="VBoxContainer/TopBar/TopBarHBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="VBoxContainer/TopBar/TopBarHBox/CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Username Here"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuContainer" type="Panel" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("6_fhvjj")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MenuContainer"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 678.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Margin1" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="LabelMenu" type="Label" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_73v6y")
+theme_override_font_sizes/font_size = 24
+text = "Main Menu"
+horizontal_alignment = 1
+
+[node name="Margin2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ButtonHostGame" type="Button" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("6_fhvjj")
+theme_override_fonts/font = ExtResource("7_73v6y")
+theme_override_font_sizes/font_size = 24
+text = "Host Game"
+
+[node name="Margin3" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ButtonJoinGame" type="Button" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("6_fhvjj")
+theme_override_fonts/font = ExtResource("7_73v6y")
+theme_override_font_sizes/font_size = 24
+text = "Join Game"
+
+[node name="Margin4" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ButtonOptions" type="Button" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("6_fhvjj")
+theme_override_fonts/font = ExtResource("7_73v6y")
+theme_override_font_sizes/font_size = 24
+text = "Options"
+
+[node name="Margin5" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ButtonCollection" type="Button" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("6_fhvjj")
+theme_override_fonts/font = ExtResource("7_73v6y")
+theme_override_font_sizes/font_size = 24
+text = "Collection"
+
+[node name="Margin6" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ButtonSteamTest" type="Button" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("6_fhvjj")
+theme_override_fonts/font = ExtResource("7_73v6y")
+theme_override_font_sizes/font_size = 24
+text = "Steam Tests"
+
+[node name="Margin7" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("6_fhvjj")
+theme_override_fonts/font = ExtResource("7_73v6y")
+theme_override_font_sizes/font_size = 24
+text = "Quit Game"
+
+[node name="MainView" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_pn1eu")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer/ButtonHostGame" to="." method="_on_button_host_game_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer/ButtonJoinGame" to="." method="_on_button_join_game_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer/ButtonOptions" to="." method="_on_button_options_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer/ButtonCollection" to="." method="_on_button_collection_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer/ButtonSteamTest" to="." method="_on_button_steam_test_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/MenuContainer/MarginContainer/VBoxContainer/ButtonQuit" to="." method="_on_button_quit_button_down"]
