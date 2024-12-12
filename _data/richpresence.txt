@@ -1,0 +1,9 @@
+"lang"
+{
+	"Language"	"english"
+	"Tokens"
+	{
+		"#AtMainMenu"	"At Main Menu"
+		"#Level"	"On level %level%"
+	}
+}
