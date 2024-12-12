@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://k2lwmmyb3qtj"
+path="res://.godot/imported/deep strange.mp3-3d81b70c7ab8013afdf71f87bd65f29d.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/deep strange.mp3"
+dest_files=["res://.godot/imported/deep strange.mp3-3d81b70c7ab8013afdf71f87bd65f29d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

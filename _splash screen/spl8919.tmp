@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbumgsr5lfkq6"]
+
+[ext_resource type="Script" path="res://_splash screen/splash_screen.gd" id="1_op7rn"]
+[ext_resource type="Texture2D" uid="uid://diwvhh0wm4mwy" path="res://_splash screen/splash_screen.png" id="1_v4y8u"]
+[ext_resource type="PackedScene" uid="uid://bajuyj47rtn7y" path="res://scenes/mainMenu.tscn" id="2_tr4nt"]
+[ext_resource type="AudioStream" uid="uid://k2lwmmyb3qtj" path="res://assets/sounds/deep strange.mp3" id="3_5oqsw"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("splash_screen")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_op7rn")
+load_scene = ExtResource("2_tr4nt")
+in_time = null
+fade_in_time = null
+pause_time = null
+fade_out_time = null
+out_time = null
+splash_screen = NodePath("CenterContainer/TextureRect")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_v4y8u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5oqsw")
+autoplay = true

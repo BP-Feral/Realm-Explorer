@@ -11,15 +11,13 @@ config_version=5
 [application]
 
 config/name="Realm Explorer"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://_splash screen/splashScreen.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Feral Games"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://_icons/icon.png"
-
-[autoload]
-
-SteamManager="*res://_singletons/manager_steam.gd"
 
 [debug]
 
@@ -32,12 +30,14 @@ gdscript/warnings/unsafe_method_access=1
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
+window/size/mode=3
 
 [file_customization]
 
 folder_colors={
 "res://_icons/": "gray",
 "res://_singletons/": "gray",
+"res://_splash screen/": "gray",
 "res://assets/": "yellow",
 "res://scenes/": "pink",
 "res://scripts/": "blue"
@@ -50,3 +50,6 @@ import/blender/enabled=false
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bajuyj47rtn7y"]
+
+[ext_resource type="FontFile" uid="uid://pk2ycsnxiydh" path="res://assets/fonts/pcsenior.ttf" id="1_i1pli"]
+[ext_resource type="AudioStream" uid="uid://caa6bstygilex" path="res://assets/sounds/signal noise.mp3" id="2_7jv2p"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_i1pli")
+theme_override_font_sizes/font_size = 48
+text = "Main Menu Here"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_7jv2p")
+autoplay = true
